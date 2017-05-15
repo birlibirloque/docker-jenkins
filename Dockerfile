@@ -12,7 +12,7 @@ RUN echo 2.46.2 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
 RUN echo 2.46.2 > /usr/share/jenkins/ref/jenkins.install.InstallUtil.lastExecVersion
 
 # Skip initial setup
-ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Djava.net.preferIPv4Stack=true
 
 COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
